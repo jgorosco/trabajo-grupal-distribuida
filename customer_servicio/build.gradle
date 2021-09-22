@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'uce.edu.ec'
+
+ext{
+    helidonVersion = '2.3.2'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    //lombok
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    //Helidon
+    implementation platform("io.helidon:helidon-dependencies:${project.helidonVersion}")
+
+    implementation 'io.helidon.microprofile.server:helidon-microprofile-server'
+
+    // https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api
+    compileOnly group: 'jakarta.platform', name: 'jakarta.jakartaee-api', version: '8.0.0'
+
+}
+
+
+application{
+    mainClassName = 'com.programacion.distribuida.AppMain'
+}
+
+sourceSets{
+    main{
+        output.resourcesDir = file("${buildDir}/classes/java/main")
+    }
+}
