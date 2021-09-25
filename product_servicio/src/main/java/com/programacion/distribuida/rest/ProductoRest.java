@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @ApplicationScoped
-@Path("/")
+@Path("/productos")
 public class ProductoRest {
 
     @Inject
