@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+}
+
+group 'uce.edu.ec'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+}
