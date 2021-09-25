@@ -6,7 +6,7 @@ plugins {
 group 'uce.edu.ec'
 
 ext{
-    helidonVersion = '2.3.2'
+    helidonVersion = '2.3.3'
 }
 
 repositories {
@@ -29,6 +29,31 @@ dependencies {
 
     // https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api
     compileOnly group: 'jakarta.platform', name: 'jakarta.jakartaee-api', version: '8.0.0'
+
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.23'
+
+    // https://mvnrepository.com/artifact/io.helidon.integrations.cdi/helidon-integrations-cdi-datasource-hikaricp
+    implementation group: 'io.helidon.integrations.cdi', name: 'helidon-integrations-cdi-datasource-hikaricp', version: '2.3.3'
+
+    // https://mvnrepository.com/artifact/io.helidon.integrations.cdi/helidon-integrations-cdi-jpa
+    runtimeOnly group: 'io.helidon.integrations.cdi', name: 'helidon-integrations-cdi-jpa', version: project.helidonVersion
+
+    // https://mvnrepository.com/artifact/io.helidon.integrations.cdi/helidon-integrations-cdi-eclipselink
+    implementation group: 'io.helidon.integrations.cdi', name: 'helidon-integrations-cdi-eclipselink', version: project.helidonVersion
+
+    // https://mvnrepository.com/artifact/io.helidon.integrations.cdi/helidon-integrations-cdi-jta-weld
+    implementation group: 'io.helidon.integrations.cdi', name: 'helidon-integrations-cdi-jta-weld', version: project.helidonVersion
+
+    // https://mvnrepository.com/artifact/org.glassfish.jersey.media/jersey-media-json-jackson
+    implementation group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '2.34'
+
+    // https://mvnrepository.com/artifact/org.eclipse.microprofile.rest.client/microprofile-rest-client-api
+    implementation group: 'org.eclipse.microprofile.rest.client', name: 'microprofile-rest-client-api', version: '2.0'
+
+    compile('javax.xml.bind:jaxb-api:2.3.1')
+    compile('javax.activation:activation:1.1.1')
+    compile('org.glassfish.jaxb:jaxb-runtime:2.3.1')
 
 }
 

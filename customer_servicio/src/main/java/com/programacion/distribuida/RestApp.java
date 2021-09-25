@@ -1,15 +1,17 @@
 package com.programacion.distribuida;
 
-import com.kumuluz.ee.discovery.annotations.RegisterService;
-
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.Initialized;
+import javax.enterprise.event.Observes;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-@ApplicationPath(value = "/")
-@RegisterService("/api")
 @ApplicationScoped
+@ApplicationPath("/")
 public class RestApp extends Application {
 
+    public void init(@Observes @Initialized(ApplicationScoped.class) Object obj) {
+
+    }
 
 }
