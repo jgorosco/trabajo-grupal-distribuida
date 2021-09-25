@@ -1,0 +1,16 @@
+com/programacion/distribuida/rest/ProductoRest.java
+ com.programacion.distribuida.rest.ProductoRest
+com/programacion/distribuida/dto/Categoria.java
+ com.programacion.distribuida.dto.Categoria
+com/programacion/distribuida/rest/RestApp.java
+ com.programacion.distribuida.rest.RestApp
+com/programacion/distribuida/AppMain.java
+ com.programacion.distribuida.AppMain
+com/programacion/distribuida/servicio/ProductoServicioImp.java
+ com.programacion.distribuida.servicio.ProductoServicioImp
+com/programacion/distribuida/servicio/ProductoServicio.java
+ com.programacion.distribuida.servicio.ProductoServicio
+com/programacion/distribuida/dto/Review.java
+ com.programacion.distribuida.dto.Review
+com/programacion/distribuida/dto/Producto.java
+ com.programacion.distribuida.dto.Producto

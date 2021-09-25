@@ -6,9 +6,11 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name="products")
+@Table(name="product")
 public class Producto {
 
     @Id
@@ -35,7 +37,7 @@ public class Producto {
 
     @Getter @Setter
     @Column(name="status", nullable = false)
-    private Double estado;
+    private String estado;
 
     @Getter @Setter
     @Column(name="salescounter", nullable = false)
@@ -49,5 +51,14 @@ public class Producto {
     @JoinColumn(name="category_id")
     private Categoria categoria;
 
+//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+//    @JoinTable(name = "product_review",
+//            joinColumns = @JoinColumn(name = "product_id"),
+//            inverseJoinColumns = @JoinColumn(name = "review_id"))
+//    private Set<Review> reviews = new HashSet<>();
+
+//    @ManyToOne
+//    @JoinColumn(name="category_id")
+//    private Categoria categoria;
 
 }
