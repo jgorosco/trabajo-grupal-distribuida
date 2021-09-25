@@ -9,7 +9,7 @@ import java.util.List;
 @ApplicationScoped
 public class ProductoServicioImp implements ProductoServicio {
 
-    @PersistenceContext(name = "distribuida")
+    @PersistenceContext(name = "productoPU")
     private EntityManager emp;
 
     @Override
@@ -28,6 +28,17 @@ public class ProductoServicioImp implements ProductoServicio {
         listado = emp.createQuery("SELECT u FROM Producto u", Producto.class).getResultList();
         return listado;
     }
+
+    @Override
+    public List<Producto> listarDisponibles() {
+        return emp.createQuery("SELECT c FROM Producto c WHERE c.estado = 'Disponible'", Producto.class).getResultList();
+    }
+
+    @Override
+    public List<Producto> listarAgostados() {
+        return emp.createQuery("SELECT c FROM Producto c WHERE c.estado = 'Agotado'", Producto.class).getResultList();
+    }
+
 
     @Override
     public Producto editar(Producto producto) {
