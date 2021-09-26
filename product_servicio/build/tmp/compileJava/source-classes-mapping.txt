@@ -20,13 +20,13 @@ com/programacion/distribuida/dto/ReviewDto.java
  com.programacion.distribuida.dto.ReviewDto
 com/programacion/distribuida/servicio/ProductoServicio.java
  com.programacion.distribuida.servicio.ProductoServicio
+com/programacion/distribuida/rest/ProductoRest.java
+ com.programacion.distribuida.rest.ProductoRest
 com/programacion/distribuida/servicio/ProductoServicioImp.java
  com.programacion.distribuida.servicio.ProductoServicioImp
 com/programacion/distribuida/servicio/ReviewServicio.java
  com.programacion.distribuida.servicio.ReviewServicio
 com/programacion/distribuida/servicio/ReviewServicioImp.java
  com.programacion.distribuida.servicio.ReviewServicioImp
-com/programacion/distribuida/rest/ProductoRest.java
- com.programacion.distribuida.rest.ProductoRest
 com/programacion/distribuida/rest/ReviewRest.java
  com.programacion.distribuida.rest.ReviewRest

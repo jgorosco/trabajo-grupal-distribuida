@@ -15,6 +15,11 @@ public class ReviewServicioImp implements ReviewServicio{
     private EntityManager emp;
 
     @Override
+    public void crear(Review review) {
+        emp.persist(review);
+    }
+
+    @Override
     public Review listarPorId(Integer id) {
         return emp.find(Review.class, id);
     }
@@ -30,5 +35,15 @@ public class ReviewServicioImp implements ReviewServicio{
     public List<Review> listar() {
         return emp.createQuery("SELECT u FROM Review u", Review.class)
                 .getResultList();
+    }
+
+    @Override
+    public void editar(Review review) {
+        emp.merge(review)
+    }
+
+    @Override
+    public void eliminar(Integer id) {
+        emp.remove(listarPorId(id));
     }
 }
