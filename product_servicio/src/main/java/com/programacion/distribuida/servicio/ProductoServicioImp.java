@@ -16,7 +16,7 @@ public class ProductoServicioImp implements ProductoServicio {
     private EntityManager emp;
 
     @Inject
-    private CategoriaServicio categoriaServicio;
+    private ReviewServicio reviewServicio;
 
     public ProductoDto mapearProductoDto(Producto producto) {
         ProductoDto dto = new ProductoDto();
@@ -40,7 +40,9 @@ public class ProductoServicioImp implements ProductoServicio {
     @Override
     public ProductoDto buscarId(Integer id) {
         Producto producto = emp.find(Producto.class,id);
-        return mapearProductoDto(producto);
+        ProductoDto productoDto = mapearProductoDto(producto);
+        productoDto.setReviews(reviewServicio.todosPorIdProducto(id));
+        return productoDto;
     }
 
     @Override

@@ -27,8 +27,8 @@ public class Review {
     @Column(name="created", nullable = false)
     private LocalDate creado;
 
-    @ManyToOne
-    @JoinColumn(name="product_id")
-    private Producto categoria;
+    @Getter @Setter
+    @Column(name="product_id", nullable = false)
+    private Integer productoId;
 
 }

@@ -1,11 +1,13 @@
 package com.programacion.distribuida.dto;
 
+import com.programacion.distribuida.dominio.Review;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 public class ProductoDto implements Serializable {
 
@@ -18,5 +20,6 @@ public class ProductoDto implements Serializable {
     @Getter @Setter private Integer contadorVentas;
     @Getter @Setter private LocalDate creado;
     @Getter @Setter private String categoria;
+    @Getter @Setter private List<Review> reviews;
 
 }

@@ -6,6 +6,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name="product")
@@ -45,16 +46,17 @@ public class Producto {
     @Column(name="created", nullable = false)
     private LocalDate creado;
 
-    @Getter
+    @Getter @Setter
     @ManyToOne
     @JoinColumn(name="category_id")
     private Categoria categoria;
 
+//    @Getter @Setter
 //    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 //    @JoinTable(name = "product_review",
 //            joinColumns = @JoinColumn(name = "product_id"),
 //            inverseJoinColumns = @JoinColumn(name = "review_id"))
-//    private Set<Review> reviews = new HashSet<>();
+//    private List<Review> reviews;
 
 //    @ManyToOne
 //    @JoinColumn(name="category_id")
