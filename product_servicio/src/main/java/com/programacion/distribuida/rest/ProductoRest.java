@@ -1,6 +1,7 @@
 package com.programacion.distribuida.rest;
 
-import com.programacion.distribuida.dto.Producto;
+import com.programacion.distribuida.dominio.Producto;
+import com.programacion.distribuida.dto.ProductoDto;
 import com.programacion.distribuida.servicio.ProductoServicio;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -32,7 +33,7 @@ public class ProductoRest {
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Producto listarPorId(@PathParam("id") Integer id){
+    public ProductoDto listarPorId(@PathParam("id") Integer id){
         return servicio.buscarId(id);
     }
 

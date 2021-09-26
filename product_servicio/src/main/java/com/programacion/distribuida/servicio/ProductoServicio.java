@@ -1,13 +1,14 @@
 package com.programacion.distribuida.servicio;
 
-import com.programacion.distribuida.dto.Producto;
+import com.programacion.distribuida.dominio.Producto;
+import com.programacion.distribuida.dto.ProductoDto;
 
 import java.util.List;
 
 public interface ProductoServicio {
 
     void crear(Producto producto);
-    Producto buscarId(Integer id);
+    ProductoDto buscarId(Integer id);
     List<Producto> listar();
     List<Producto> listarDisponibles();
     List<Producto> listarAgostados();

@@ -1,4 +1,4 @@
-package com.programacion.distribuida.dto;
+package com.programacion.distribuida.dominio;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,6 +9,8 @@ import java.time.LocalDate;
 @Entity
 @Table(name="category")
 public class Categoria {
+
+    public Categoria(){}
 
     @Id
     @Getter @Setter
