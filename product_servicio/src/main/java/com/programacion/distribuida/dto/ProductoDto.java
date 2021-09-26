@@ -1,5 +1,6 @@
 package com.programacion.distribuida.dto;
 
+import com.programacion.distribuida.dominio.Categoria;
 import com.programacion.distribuida.dominio.Review;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,7 +20,7 @@ public class ProductoDto implements Serializable {
     @Getter @Setter private String estado;
     @Getter @Setter private Integer contadorVentas;
     @Getter @Setter private LocalDate creado;
-    @Getter @Setter private String categoria;
+    @Getter @Setter private Categoria categoria;
     @Getter @Setter private List<Review> reviews;
 
 }

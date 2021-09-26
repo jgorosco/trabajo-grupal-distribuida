@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
+@NamedQueries({ @NamedQuery(name = "Producto.todos", query = "SELECT u FROM Producto u")})
 @Table(name="product")
 public class Producto {
 

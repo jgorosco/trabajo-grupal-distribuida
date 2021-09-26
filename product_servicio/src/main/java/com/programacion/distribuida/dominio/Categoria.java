@@ -10,7 +10,9 @@ import java.time.LocalDate;
 @Table(name="category")
 public class Categoria {
 
-    public Categoria(){}
+    public Categoria(){
+
+    }
 
     @Id
     @Getter @Setter
