@@ -41,7 +41,7 @@ public class ProductoServicioImp implements ProductoServicio {
     public ProductoDto buscarId(Integer id) {
         Producto producto = emp.find(Producto.class,id);
         ProductoDto productoDto = mapearProductoDto(producto);
-        productoDto.setReviews(reviewServicio.todosPorIdProducto(id));
+        productoDto.setReviews(reviewServicio.listarPorIdProducto(id));
         return productoDto;
     }
 

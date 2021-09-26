@@ -6,7 +6,8 @@ import java.util.List;
 
 public interface ReviewServicio {
 
-    List<Review> todosPorIdProducto(Integer productoId);
+    Review listarPorId(Integer id);
+    List<Review> listarPorIdProducto(Integer productoId);
     List<Review> listar();
 
 }

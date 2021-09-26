@@ -18,7 +18,7 @@ public class ProductoRest {
     private ProductoServicio servicio;
 
     @GET
-    @Path("test")
+    @Path("/test")
     @Produces(MediaType.APPLICATION_JSON)
     public String hola(){
         return "Hola mundo desde producto";

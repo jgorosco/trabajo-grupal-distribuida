@@ -15,7 +15,12 @@ public class ReviewServicioImp implements ReviewServicio{
     private EntityManager emp;
 
     @Override
-    public List<Review> todosPorIdProducto(Integer productoId) {
+    public Review listarPorId(Integer id) {
+        return emp.find(Review.class, id);
+    }
+
+    @Override
+    public List<Review> listarPorIdProducto(Integer productoId) {
         return emp.createQuery("SELECT u FROM Review u WHERE u.productoId = :id", Review.class)
                 .setParameter("id", productoId)
                 .getResultList();
