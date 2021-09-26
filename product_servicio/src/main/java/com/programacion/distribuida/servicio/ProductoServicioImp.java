@@ -7,6 +7,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.ArrayList;
 import java.util.List;
 
 @ApplicationScoped
@@ -22,7 +23,7 @@ public class ProductoServicioImp implements ProductoServicio {
         ProductoDto dto = new ProductoDto();
         dto.setId(producto.getId());
         dto.setCantidad(producto.getCantidad());
-        dto.setCategoria(producto.getCategoria().getNombre());
+        dto.setCategoria(producto.getCategoria());
         dto.setCreado(producto.getCreado());
         dto.setDescripcion(producto.getDescripcion());
         dto.setEstado(producto.getEstado());
@@ -46,10 +47,16 @@ public class ProductoServicioImp implements ProductoServicio {
     }
 
     @Override
-    public List<Producto> listar() {
+    public List<ProductoDto> listar() {
         List<Producto> listado;
         listado = emp.createQuery("SELECT u FROM Producto u", Producto.class).getResultList();
-        return listado;
+        List<ProductoDto> listadoDto = new ArrayList<>();
+        for (Producto producto: listado) {
+            ProductoDto productoDto = mapearProductoDto(producto);
+            productoDto.setReviews(reviewServicio.listarPorIdProducto(producto.getId()));
+            listadoDto.add(productoDto);
+        }
+        return listadoDto;
     }
 
     @Override

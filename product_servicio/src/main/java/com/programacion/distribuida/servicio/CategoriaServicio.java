@@ -10,7 +10,7 @@ public interface CategoriaServicio {
 
     void crear(Categoria categoria);
     List<Categoria> listar();
-    Categoria buscarId(Integer id);
+    Categoria listarPorId(Integer id);
     Categoria editar(Categoria categoria);
     void eliminar(Integer id);
 

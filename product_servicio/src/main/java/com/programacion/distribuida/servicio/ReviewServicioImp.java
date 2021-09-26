@@ -39,7 +39,7 @@ public class ReviewServicioImp implements ReviewServicio{
 
     @Override
     public void editar(Review review) {
-        emp.merge(review)
+        emp.merge(review);
     }
 
     @Override

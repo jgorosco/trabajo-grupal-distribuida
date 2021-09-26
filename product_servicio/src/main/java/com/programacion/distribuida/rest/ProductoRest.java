@@ -26,7 +26,7 @@ public class ProductoRest {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Producto> listar(){
+    public List<ProductoDto> listar(){
         return servicio.listar();
     }
 
@@ -68,6 +68,5 @@ public class ProductoRest {
     public void delete(@PathParam("id") Integer id){
         servicio.eliminar(id);
     }
-
 
 }

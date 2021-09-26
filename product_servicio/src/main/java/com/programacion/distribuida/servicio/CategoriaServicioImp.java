@@ -26,7 +26,7 @@ public class CategoriaServicioImp implements CategoriaServicio {
     }
 
     @Override
-    public Categoria buscarId(Integer id) {
+    public Categoria listarPorId(Integer id) {
         return emp.find(Categoria.class, id);
     }
 
