@@ -9,6 +9,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 @ApplicationScoped
@@ -21,8 +22,9 @@ public class ReviewRest {
     @GET
     @Path("/test")
     @Produces(MediaType.APPLICATION_JSON)
-    public String hola(){
-        return "Hola mundo desde review";
+    public Response hola(){
+        String msg = "Hola mundo desde review";
+        return Response.ok(msg, MediaType.APPLICATION_JSON).build();
     }
 
     @GET

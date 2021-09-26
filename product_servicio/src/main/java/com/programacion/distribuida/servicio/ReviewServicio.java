@@ -10,4 +10,5 @@ public interface ReviewServicio {
     List<Review> listarPorIdProducto(Integer productoId);
     List<Review> listar();
 
+
 }
