@@ -26,9 +26,9 @@ com/programacion/distribuida/rest/ReviewRest.java
  com.programacion.distribuida.rest.ReviewRest
 com/programacion/distribuida/servicio/ReviewServicio.java
  com.programacion.distribuida.servicio.ReviewServicio
-com/programacion/distribuida/servicio/ProductoServicioImp.java
- com.programacion.distribuida.servicio.ProductoServicioImp
 com/programacion/distribuida/servicio/ProductoServicio.java
  com.programacion.distribuida.servicio.ProductoServicio
+com/programacion/distribuida/servicio/ProductoServicioImp.java
+ com.programacion.distribuida.servicio.ProductoServicioImp
 com/programacion/distribuida/rest/ProductoRest.java
  com.programacion.distribuida.rest.ProductoRest
