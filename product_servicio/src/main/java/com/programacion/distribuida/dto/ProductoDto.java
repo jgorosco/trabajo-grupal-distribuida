@@ -21,6 +21,7 @@ public class ProductoDto implements Serializable {
     @Getter @Setter private Integer contadorVentas;
     @Getter @Setter private LocalDate creado;
     @Getter @Setter private Categoria categoria;
+    @Getter @Setter private Integer categoriaId;
     @Getter @Setter private List<Review> reviews;
 
 }

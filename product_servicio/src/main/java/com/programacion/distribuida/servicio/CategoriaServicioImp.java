@@ -7,6 +7,9 @@ import com.programacion.distribuida.dto.ProductoDto;
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.List;
 
 @ApplicationScoped
@@ -16,7 +19,9 @@ public class CategoriaServicioImp implements CategoriaServicio {
     private EntityManager emp;
 
     @Override
+    @Transactional
     public void crear(Categoria categoria) {
+        categoria.setCreado(LocalDate.now());
         emp.persist(categoria);
     }
 
@@ -31,12 +36,14 @@ public class CategoriaServicioImp implements CategoriaServicio {
     }
 
     @Override
+    @Transactional
     public Categoria editar(Categoria categoria) {
         emp.merge(categoria);
         return categoria;
     }
 
     @Override
+    @Transactional
     public void eliminar(Integer id) {
         emp.remove(id);
     }

@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ProductoServicio {
 
-    void crear(Producto producto);
+    void crear(ProductoDto productoDto);
     ProductoDto buscarId(Integer id);
     List<ProductoDto> listar();
     List<Producto> listarDisponibles();

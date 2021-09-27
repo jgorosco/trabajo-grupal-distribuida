@@ -1,6 +1,8 @@
 package com.programacion.distribuida.dominio;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -8,14 +10,17 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @NamedQueries({ @NamedQuery(name = "Producto.todos", query = "SELECT u FROM Producto u")})
 @Table(name="product")
 public class Producto {
 
     @Id
     @Getter @Setter
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id", nullable = false)
+    @SequenceGenerator(name = "producto_local_seq", sequenceName = "product_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "producto_local_seq")
+    @Column(name="id")
     private Integer id;
 
     @Getter @Setter
@@ -36,7 +41,7 @@ public class Producto {
 
     @Getter @Setter
     @Column(name="status", nullable = false)
-    private String estado;
+    private Boolean estado;
 
     @Getter @Setter
     @Column(name="salescounter", nullable = false)

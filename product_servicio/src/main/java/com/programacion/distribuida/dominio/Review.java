@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
@@ -12,6 +13,8 @@ public class Review {
 
     @Id
     @Getter @Setter
+    @SequenceGenerator(name = "review_local_seq", sequenceName = "review_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "review_local_seq")
     @Column(name="id", nullable = false)
     private Integer id;
 
@@ -21,7 +24,7 @@ public class Review {
 
     @Getter @Setter
     @Column(name="rating", nullable = false)
-    private String calificacion;
+    private BigDecimal calificacion;
 
     @Getter @Setter
     @Column(name="created", nullable = false)

@@ -1,22 +1,21 @@
 package com.programacion.distribuida.dominio;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@NoArgsConstructor
 @Table(name="category")
 public class Categoria {
 
-    public Categoria(){
-
-    }
-
     @Id
     @Getter @Setter
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "category_local_seq", sequenceName = "category_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "category_local_seq")
     @Column(name="id", nullable = false)
     private Integer id;
 

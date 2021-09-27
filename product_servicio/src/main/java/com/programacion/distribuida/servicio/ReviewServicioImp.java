@@ -6,6 +6,8 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+import java.time.LocalDate;
 import java.util.List;
 
 @ApplicationScoped
@@ -15,7 +17,9 @@ public class ReviewServicioImp implements ReviewServicio{
     private EntityManager emp;
 
     @Override
+    @Transactional
     public void crear(Review review) {
+        review.setCreado(LocalDate.now());
         emp.persist(review);
     }
 
@@ -38,11 +42,13 @@ public class ReviewServicioImp implements ReviewServicio{
     }
 
     @Override
+    @Transactional
     public void editar(Review review) {
         emp.merge(review);
     }
 
     @Override
+    @Transactional
     public void eliminar(Integer id) {
         emp.remove(listarPorId(id));
     }

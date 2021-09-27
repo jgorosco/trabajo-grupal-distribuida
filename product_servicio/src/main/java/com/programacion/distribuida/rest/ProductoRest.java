@@ -53,8 +53,8 @@ public class ProductoRest {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void crear(Producto producto){
-        servicio.crear(producto);
+    public void crear(ProductoDto productoDto){
+        servicio.crear(productoDto);
     }
 
     @PUT
