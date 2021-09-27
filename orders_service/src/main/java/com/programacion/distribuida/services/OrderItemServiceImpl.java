@@ -50,13 +50,13 @@ public class OrderItemServiceImpl implements OrderItemService {
         orderItem.setProductId(orderItemDto.getProductId());
         orderItem.setQuantity(orderItemDto.getQuantity());
         orderItem.setCreated(LocalDate.now());
-        OrderItem orderItem1 = orderItem.setOrder(orderService.findById(orderItemDto.getOrderId()));
+        orderItem.setOrder(orderService.findById(orderItemDto.getOrderId()));
         em.persist(orderItem);
     }
 
     @Override
     public void delete(OrderItemDto orderItemDto) {
-
-
+        OrderItem orderItem = em.find(OrderItem.class,orderItemDto.getId());
+        em.remove(orderItem);
     }
 }

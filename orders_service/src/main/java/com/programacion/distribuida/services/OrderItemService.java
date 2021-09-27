@@ -8,6 +8,5 @@ public interface OrderItemService {
     OrderItemDto findById(Integer Id);
     List<OrderItemDto> findAll();
     void create(OrderItemDto orderItemDto);
-    void update(OrderItemDto orderItemDto);
     void delete(OrderItemDto orderItemDto);
 }
