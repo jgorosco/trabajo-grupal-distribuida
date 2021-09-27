@@ -10,8 +10,8 @@ public interface ProductoServicio {
     void crear(ProductoDto productoDto);
     ProductoDto buscarId(Integer id);
     List<ProductoDto> listar();
-    List<Producto> listarDisponibles();
-    List<Producto> listarAgostados();
+    List<ProductoDto> listarDisponibles();
+    List<ProductoDto> listarAgostados();
     Producto editar(Producto producto);
     void eliminar(Integer id);
 
