@@ -1,10 +1,14 @@
 package com.programacion.distribuida.entitites;
 
 import javax.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import java.time.LocalDate;
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="orders")
 public class Order {

@@ -7,7 +7,6 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Getter
-@Setter
 @MappedSuperclass
 public abstract class AbstractEntity {
 

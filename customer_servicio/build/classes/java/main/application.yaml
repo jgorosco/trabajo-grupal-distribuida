@@ -4,6 +4,12 @@ javax:
       customerDataSource:
         dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
         dataSource:
+          url: jdbc:postgresql://localhost:5432/tgrupalDistribuida
+          user: postgres
+          password: uceadmin95
+      productionDS:
+        dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
+        dataSource:
           url: jdbc:postgresql://fanny.db.elephantsql.com:5432/apmygctp
           user: apmygctp
           password: cIOFosqRjrP03S3_7DDKIz10vJHH-Ojg

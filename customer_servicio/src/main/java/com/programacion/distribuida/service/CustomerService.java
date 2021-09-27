@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RequestScoped
+@Transactional
 public class CustomerService {
 
     @PersistenceContext(unitName = "customerPU")
@@ -29,7 +30,6 @@ public class CustomerService {
         );
     }
 
-    @Transactional
     public void create(CustomerDto customerDto) {
         em.persist(new Customer(customerDto.getFirstName(),
                 customerDto.getLastName(),
@@ -37,7 +37,12 @@ public class CustomerService {
                 customerDto.getPhone(),
                 customerDto.getEmail(),
                 customerDto.getSubscriptionDate(),
-                customerDto.isStatus()));
+                Boolean.TRUE));
+    }
+
+    public CustomerDto update(Customer customer) {
+        em.merge(customer);
+        return mapToDto(customer);
     }
 
     public List<CustomerDto> findAll() {
@@ -50,20 +55,23 @@ public class CustomerService {
         return mapToDto(em.find(Customer.class, id));
     }
 
-    public List<CustomerDto> findAllActive(){
+    public Customer findCustomerById(Long id) {
+        return em.find(Customer.class, id);
+    }
+
+    public List<CustomerDto> findAllActive() {
         return em.createNamedQuery("Customer.findAllActive", Customer.class)
                 .getResultList().stream().map(CustomerService::mapToDto)
                 .collect(Collectors.toList());
     }
 
-    public List<CustomerDto> findAllInactive(){
+    public List<CustomerDto> findAllInactive() {
         return em.createNamedQuery("Customer.findAllInactive", Customer.class)
                 .getResultList().stream().map(CustomerService::mapToDto)
                 .collect(Collectors.toList());
     }
 
-    @Transactional
-    public void delete(Long id){
+    public void delete(Long id) {
         Customer customer = this.em.find(Customer.class, id);
         customer.setStatus(false);
         this.em.merge(customer);

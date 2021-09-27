@@ -7,5 +7,6 @@
     <persistence-unit name="orderPU" transaction-type="JTA">
         <jta-data-source>customerDataSource</jta-data-source>
         <class>com.programacion.distribuida.entitites.Cart</class>
+        <class>com.programacion.distribuida.entitites.Payment</class>
     </persistence-unit>
 </persistence>
