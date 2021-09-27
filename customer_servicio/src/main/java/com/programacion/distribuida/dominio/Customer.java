@@ -37,7 +37,7 @@ public class Customer extends AbstractEntity{
     private String email;
 
     @Column(name = "subscriptiondate")
-    private Date subscriptionDate;
+    private Date subscriptionDate = new Date();
 
     @Column(name = "status")
     private boolean status;

@@ -1,0 +1,11 @@
+com/programacion/distribuida/dto/CustomerDto.java
+ com.programacion.distribuida.dto.CustomerDto
+com/programacion/distribuida/service/WebService.java
+ com.programacion.distribuida.service.WebService
+com/programacion/distribuida/service/WebEndpoint.java
+ com.programacion.distribuida.service.WebEndpoint
+ com.programacion.distribuida.service.WebEndpoint$UppercaseEncoder
+com/programacion/distribuida/dto/UserDto.java
+ com.programacion.distribuida.dto.UserDto
+com/programacion/distribuida/Main.java
+ com.programacion.distribuida.Main

@@ -1,5 +1,6 @@
-package com.programacion.distribuida.repository;
+package com.programacion.distribuida.resource;
 
+import com.programacion.distribuida.dominio.Customer;
 import com.programacion.distribuida.dto.CustomerDto;
 import com.programacion.distribuida.service.CustomerService;
 
@@ -11,7 +12,7 @@ import java.util.List;
 
 @RequestScoped
 @Path("/customers")
-public class CustomerRepository {
+public class CustomerResource {
 
     @Inject
     private CustomerService customerService;
@@ -44,6 +45,19 @@ public class CustomerRepository {
     @Consumes(MediaType.APPLICATION_JSON)
     public void create(CustomerDto customerDto){
         this.customerService.create(customerDto);
+    }
+
+    @PUT
+    @Path("/{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public CustomerDto update(@PathParam("id") Long id, CustomerDto customerDto){
+        Customer customer = customerService.findCustomerById(id);
+        customer.setFirstName(customerDto.getFirstName());
+        customer.setLastName(customerDto.getLastName());
+        customer.setPhone(customerDto.getPhone());
+        customer.setAddress(customerDto.getAddress());
+        customer.setEmail(customerDto.getEmail());
+        return this.customerService.update(customer);
     }
 
     @DELETE

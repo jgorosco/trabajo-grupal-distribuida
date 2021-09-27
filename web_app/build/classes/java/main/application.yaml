@@ -1,0 +1,7 @@
+server:
+  port: 9999
+  host: 127.0.0.1
+
+client:
+  follow-redirects: true
+  max-redirects: 8
