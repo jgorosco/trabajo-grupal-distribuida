@@ -13,7 +13,7 @@ import java.util.List;
 @ApplicationScoped
 public class ReviewServicioImp implements ReviewServicio{
 
-    @PersistenceContext(name = "productoPU")
+    @PersistenceContext
     private EntityManager emp;
 
     @Override

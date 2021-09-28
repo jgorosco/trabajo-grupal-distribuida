@@ -3,6 +3,7 @@ package com.programacion.distribuida.rest;
 import com.programacion.distribuida.dominio.Producto;
 import com.programacion.distribuida.dto.ProductoDto;
 import com.programacion.distribuida.servicio.ProductoServicio;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -16,6 +17,15 @@ public class ProductoRest {
 
     @Inject
     private ProductoServicio servicio;
+
+    @Inject
+    @ConfigProperty(name = "server.port", defaultValue = "8080")
+    private Integer port;
+
+    @GET @Path("/ping")
+    public String ping(){
+        return "OK";
+    }
 
     @GET
     @Path("/test")

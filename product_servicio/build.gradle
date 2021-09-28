@@ -44,11 +44,25 @@ dependencies {
     // https://mvnrepository.com/artifact/io.helidon.integrations.cdi/helidon-integrations-cdi-jpa
     runtimeOnly group: 'io.helidon.integrations.cdi', name: 'helidon-integrations-cdi-jpa', version: '2.3.3'
     // https://mvnrepository.com/artifact/io.helidon.integrations.cdi/helidon-integrations-cdi-eclipselink
-    implementation group: 'io.helidon.integrations.cdi', name: 'helidon-integrations-cdi-eclipselink', version: '2.3.3'
+    //implementation group: 'io.helidon.integrations.cdi', name: 'helidon-integrations-cdi-eclipselink', version: '2.3.3'
     // https://mvnrepository.com/artifact/jakarta.persistence/jakarta.persistence-api
-    implementation group: 'jakarta.persistence', name: 'jakarta.persistence-api', version: '3.0.0'
+    //implementation group: 'jakarta.persistence', name: 'jakarta.persistence-api', version: '3.0.0'
     // https://mvnrepository.com/artifact/jakarta.transaction/jakarta.transaction-api
-    implementation group: 'jakarta.transaction', name: 'jakarta.transaction-api', version: '2.0.0'
+    //implementation group: 'jakarta.transaction', name: 'jakarta.transaction-api', version: '2.0.0'
+
+    //Jpa hibernate
+    // https://mvnrepository.com/artifact/io.helidon.integrations.cdi/helidon-integrations-cdi-datasource-hikaricp
+    //implementation group: 'io.helidon.integrations.cdi', name: 'helidon-integrations-cdi-datasource-hikaricp', version: '2.3.3'
+    // https://mvnrepository.com/artifact/io.helidon.integrations.cdi/helidon-integrations-cdi-hibernate
+    implementation group: 'io.helidon.integrations.cdi', name: 'helidon-integrations-cdi-hibernate', version: '2.3.3'
+    // https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api
+    implementation group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
+    // https://mvnrepository.com/artifact/javax.transaction/javax.transaction-api
+    implementation group: 'javax.transaction', name: 'javax.transaction-api', version: '1.3'
+
+
+
+
 
     // https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
     //implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
@@ -56,6 +70,20 @@ dependencies {
     //implementation group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '3.0.2'
     // https://mvnrepository.com/artifact/javax.activation/activation
     //implementation group: 'javax.activation', name: 'activation', version: '1.1.1'
+
+    // https://mvnrepository.com/artifact/com.kumuluz.ee.discovery/kumuluzee-discovery-etcd
+    //implementation group: 'com.kumuluz.ee.discovery', name: 'kumuluzee-discovery-consul', version: '1.1.1'
+    // https://mvnrepository.com/artifact/com.kumuluz.ee/kumuluzee-cdi-weld
+    //compileOnly group: 'com.kumuluz.ee', name: 'kumuluzee-cdi-weld', version: '3.12.1'
+    // https://mvnrepository.com/artifact/com.kumuluz.ee/kumuluzee-core
+    //implementation group: 'com.kumuluz.ee', name: 'kumuluzee-core', version: '3.12.1'
+
+    // https://mvnrepository.com/artifact/com.ecwid.consul/consul-api
+    implementation group: 'com.ecwid.consul', name: 'consul-api', version: '1.4.5'
+
+
+
+
 
     //Soluciona el error de JAXB
     compile('javax.xml.bind:jaxb-api:2.3.1')

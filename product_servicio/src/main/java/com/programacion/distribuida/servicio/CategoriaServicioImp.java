@@ -15,7 +15,7 @@ import java.util.List;
 @ApplicationScoped
 public class CategoriaServicioImp implements CategoriaServicio {
 
-    @PersistenceContext(name = "productoPU")
+    @PersistenceContext
     private EntityManager emp;
 
     @Override

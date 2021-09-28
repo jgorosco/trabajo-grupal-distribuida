@@ -3,10 +3,22 @@
              xmlns="http://xmlns.jcp.org/xml/ns/persistence"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
-                        http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
-    <persistence-unit name="productoPU" transaction-type="JTA">
-        <class>com.programacion.distribuida.dominio.Producto</class>
-        <class>com.programacion.distribuida.dominio.Categoria</class>
-        <class>com.programacion.distribuida.dominio.Review</class>
-    </persistence-unit>
+                                 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+<persistence-unit name="productoPU" transaction-type="JTA">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <jta-data-source>greetingDataSource</jta-data-source>
+    <class>com.programacion.distribuida.dominio.Producto</class>
+    <class>com.programacion.distribuida.dominio.Categoria</class>
+    <class>com.programacion.distribuida.dominio.Review</class>
+
+    <properties>
+
+        <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL10Dialect" />
+        <property name="hibernate.archive.autodetection" value="class" />
+        <property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.format_sql" value="true" />
+        <property name="hibernate.hbm2ddl.auto" value="update" />
+
+    </properties>
+</persistence-unit>
 </persistence>
