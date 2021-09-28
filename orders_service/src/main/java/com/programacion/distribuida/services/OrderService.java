@@ -1,9 +1,8 @@
 package com.programacion.distribuida.services;
 
-import com.programacion.distribuida.entitites.Order;
-
-import javax.persistence.criteria.CriteriaBuilder;
+import com.programacion.distribuida.dto.OrderDto;
 
 public interface OrderService {
-    Order findById(Integer id);
+    OrderDto findById(Integer id);
+    void create(OrderDto orderDto);
 }

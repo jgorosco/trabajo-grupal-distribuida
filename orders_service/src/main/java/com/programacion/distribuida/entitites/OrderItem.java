@@ -13,6 +13,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Entity
 @NamedQuery(name = "OrderItem.FindAll",query = "select oi from OrderItem oi")
+@NamedQuery(name="OrderItem.FindByOrderId", query = "select oi from OrderItem oi where oi.order.id= ?1")
 @Table(name = "orderitem")
 public class OrderItem {
     @Id
